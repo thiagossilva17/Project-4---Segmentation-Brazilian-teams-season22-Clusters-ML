@@ -136,7 +136,32 @@ boxplot(BD$GA ~ BD$G5, col= c("#2E9FDF", "#00AFBB", "#E7B800", "#FF00FF", "#FF14
 boxplot(BD$GD ~ BD$G5, col= c("#2E9FDF", "#00AFBB", "#E7B800", "#FF00FF", "#FF1493"), main="Saldo de gols")
 boxplot(BD$Pts.MP ~ BD$G5, col= c("#2E9FDF", "#00AFBB", "#E7B800", "#FF00FF", "#FF1493"), main="Pontos por partida")
 #variaveis de jogos como mandante
-boxplot(BD$GF_Home ~ BD$G5, col= c("#2E9FDF", "#00AFBB", "#E7B800", "#FF00FF", "#FF1493"), main="Gols feitos em casa")
+#Destacando visualizacao de grupo especifico
+boxplot(BD$MP_Home ~ BD$G5, col= c("#808080", "#808080", "#808080", "#ffa500", "#808080"), main="Gols feitos em casa", xlab="", ylab="")
+boxplot(BD$GF_Home ~ BD$G5, col= c("#808080", "#808080", "#808080", "#ffa500", "#808080"), main="Gols feitos em casa", xlab="", ylab="")
+boxplot(BD$W_Home ~ BD$G5, col= c("#808080", "#808080", "#808080", "#ffa500", "#808080"), main="Vitorias em casa", xlab="", ylab="")
+boxplot(BD$D_Home ~ BD$G5, col= c("#808080", "#808080", "#808080", "#ffa500", "#808080"), main="Empates em casa", xlab="", ylab="")
+boxplot(BD$L_Home ~ BD$G5, col= c("#808080", "#808080", "#808080", "#ffa500", "#808080"), main="Derrotas em casa", xlab="", ylab="")
+boxplot(BD$GF_Home ~ BD$G5, col= c("#808080", "#808080", "#808080", "#ffa500", "#808080"), main="Gols feitos como mandante", xlab="", ylab="")
+boxplot(BD$GA_Home ~ BD$G5, col= c("#808080", "#808080", "#808080", "#ffa500", "#808080"), main="Gols sofridos como mandante", xlab="", ylab="")
+boxplot(BD$GD_Home ~ BD$G5, col= c("#808080", "#808080", "#808080", "#ffa500", "#808080"), main="Saldo de gols como mandante", xlab="", ylab="")
+boxplot(BD$Pts_Home ~ BD$G5, col= c("#808080", "#808080", "#808080", "#ffa500", "#808080"), main="Pontos ganhos como mandante", xlab="", ylab="")
+boxplot(BD$Pts_per_MP_Home ~ BD$G5, col= c("#808080", "#808080", "#808080", "#ffa500", "#808080"), main="Pontos por jogo como mandante", xlab="", ylab="")
 
 
+par(mfrow=c(2,2))
+ggplot(BD, aes(x=G5, y=GF_Home)) + 
+  geom_bar(stat = "identity", width=0.2) 
+
+ggplot(BD, aes(x=G5, y=GA_Home)) + 
+  geom_bar(stat = "identity", width=0.2) 
+
+
+
+?boxplot
+
+#ffa500
+#808080
+#C0C0C0
+glimpse(BD)
 
